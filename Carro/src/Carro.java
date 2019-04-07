@@ -77,27 +77,27 @@ public class Carro{ //Class
 		System.out.println("mostrar,"+"embarcar,"+"desembarcar,"+"abastecer,"+"dirigir");
 		while (entrar) { // testanto de é verdadeiro (entrar = true)
 			
-			System.out.println(">>");
+			
 			String linha = input.nextLine();
 			String[] comando = linha.split(" ");
 			String op = comando[0];
-			if(op == "embarcar"){
+			if(op.equals("embarcar")){
 				car.embarcar();
-			}else if(op == "mostrar") {
+			}else if(op.equals("mostrar")) {
 				car.mostrar();
 				
-			}else if(op == "desembarcar") {
+			}else if(op.equals("desembarcar")) {
 				car.desembarcar();
 				
-			}else if(op =="abastecer") {
+			}else if(op.equals("abastecer")) {
 				int qtdgasolina = Integer.parseInt(comando[1]);
 				car.abastecer(qtdgasolina);
 	
-			}else if(op == "dirigir") {
+			}else if(op.equals("dirigir")) {
 				int qtdKm = Integer.parseInt(comando[1]);
 				car.dirigir(qtdKm);
 				
-			}else if(op == "sair") {
+			}else if(op.equals("sair")) {
 				entrar = false;
 			}
 			
