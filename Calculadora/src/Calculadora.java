@@ -74,6 +74,7 @@ public class Calculadora {
 				String resultado = calc.soma(v1, v2);
 				System.out.println(resultado);
 				bateria -=1;		
+			
 			}else if (op.equals("divisao")) {
 				System.out.println("insira n1");
 				int v1 = entrada.nextInt();

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Carro{ //Class
+public class Carro{ //Classe
 	int tanque; 
 	int maxGas;
 	int qtdPas;
