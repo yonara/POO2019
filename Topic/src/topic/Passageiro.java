@@ -1,6 +1,7 @@
 package topic;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Passageiro {
 	
@@ -85,7 +86,44 @@ class Topic {
 	}
 	    
 	    
+class Controller {
+    public static void main(String[] args) {
+    	Scanner input = new Scanner(System.in);
+        Topic topic = new Topic(0,0); // criando um objeto
+        
+        System.out.println("Comandos:"+"mostrar,"+"embarcar,"+"desembarcar,"+"iniciar,"+"fim");
 
+        while (true){
+        	
+            String linha = input.nextLine();
+            String[] comando = linha.split(" ");
+            String op = comando[0];
+            
+            
+            if (op.equals("fim")){
+            	
+            	System.out.println("Tchau!");
+                break;
+            }else if (op.equals("iniciar")){
+            	System.out.println("Digite:");
+                topic = new Topic(Integer.parseInt(comando[1]), Integer.parseInt(comando[2]));
+            
+            }else if (op.equals("mostrar")){
+                System.out.println(topic.toString());
+            
+            
+            }else if ( op.equals("embarcar")){
+                topic.inserirpass(new Passageiro(comando[1], Integer.parseInt(comando[2])));
+            
+            }else if (op.equals("desembarcar")){
+                topic.removerpass(comando[1]);
+            
+            }else{
+                System.out.println("Erro: comando invalido");
+            }
+        }
+    }
+}
 
 
 
