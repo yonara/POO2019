@@ -1,51 +1,86 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Sistema {
+	ArrayList<Cliente> clientes;
+	ArrayList<Transacao> tr;
+	float saldo;
+	int count;
 	
-	private int idGerador;
-	private float saldo;
-	private List<Cliente> clientes;
-	private List<Transacao> transacoes;
-	
-	
-	public Sistema (float saldo) {
+	public Sistema(float saldo) {
 		this.saldo = saldo;
-		this.clientes = new ArrayList<>();
-		this.transacoes = new ArrayList<>();
-		this.idGerador = 0;
+		this.clientes = new ArrayList<Cliente>();
+		this.tr = new ArrayList<Transacao>();
+		this.count = 0;	
 	}
-
-	
-	
-	public void AddCli (String IdCli, String nome ) {
-		Cliente cliente = new Cliente(IdCli,0, nome);
-		this.clientes.add(cliente);// adicionando cliente na lista
-		
-		
+	public String toString() {
+		String saida = " ";
+		for (Cliente cliente : clientes) {
+			saida += cliente +"\n";
+		}	
+			return saida+"Saldo: "+ this.saldo + "\n";
 	}
-	
-	public void mostrarHistorico() {
-		
-	}
-	
-	public void mostrarCliente() {
-		
+	public void cadastrar(Cliente cli) {
+		if(this.encontrarClientes(cli.id) != null) {
+			System.out.println("Id ja cadastrado");
+			return;
+		}
+		clientes.add(cli);
 	}
 	
-	public void emprestarDinheiro() {
-		
+	public Cliente encontrarClientes(String id){
+		for(Cliente cli : clientes) {
+			if(cli.id.equals(id)) {
+				return cli;
+			}
+		}
+		return null;
 	}
-	
-	public void receberDinheiro() {
-		
+	public void emprestar(String id, float valor) {
+		Cliente cli = encontrarClientes(id);
+		if(cli == null) {
+			System.out.println("cliente não existente");
+			return;
+		}
+		if(this.saldo < valor) {
+			System.out.println(" valor indisponível ");
+			return;
+		}
+		this.tr.add(new Transacao(count,-valor,id));
+		count+=1;
+		this.saldo -= valor;
+		cli.saldo += valor;
+	}	
+	ArrayList<Transacao>historico() {
+        return tr;
+    }
+	public void mostrarCliente(String id) {
+		for(Cliente c : clientes ){
+			if(c.id.equals(id)) {
+				System.out.println(tr);		
+			}
+			System.out.println("cliente náo cadastrado");
+			return;
+		}
+	}	
+	public void receber(String id, int valor) {
+			Cliente cli =  encontrarClientes(id);
+			if(cli == null) {
+				System.out.println("cliente não cadastrado");
+				return; 
+			}
+			if(valor > cli.saldo) {
+				System.out.println(" fail: valor maior que a divida");
+					return;
+			}
+			cli.saldo -= valor;
+			this.saldo += saldo;
+		}	
+	public void matar(String id) {
+		Cliente cli = encontrarClientes(id);
+		this.clientes.remove(cli);
+		this.tr.remove(cli);
+		return;
 	}
-	
-	public void matarCliente() {
-		
-	}
-	
-	
 }
