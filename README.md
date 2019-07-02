@@ -38,3 +38,5 @@ encontrados pesquisando.
 Fiz a atividade com auxílio de videos e pequisando, tive um pouco de dificuldade para fazer
 a parte do extorno
 
+# Empresa:
+Iniciei a atividade,  criei clases Funcionario e professor, atributos, metodos e instanciei 
