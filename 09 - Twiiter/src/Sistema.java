@@ -1,26 +1,44 @@
-public class Sistema {
+import java.util.ArrayList;
 
-	String id;
-	Map<String,Usuario> usuarios;
-	
-	public Sistema () {
-		usuarios = new TreeMap<String,Usuario>();
-	}
-	public void addUsuario(String id) {
-		Usuario user = usuarios.get(id);
-		if(user == null) {
-			usuarios.put(id, new Usuario(id));
-		}
-	}
-	public Usuario getUsuario(String id) {
-		Usuario user = usuarios.get(id);
-		if(user == null)
-			throw new RuntimeException("Usuario nao encontrado");
-		return user;
-	}
-	@Override
-	public String toString() {
-		return "Sistema [id=" + id + ", Usuario=" + usuarios + "]";
-	}
+public class Sistema {
+    ArrayList<Usuario> usuarios = new ArrayList<>();
+
+    public void addUsuario(String username){
+        Usuario u = new Usuario(username);
+        usuarios.add(u);
+    }
+    public void mostraUsuarios(){
+        for(Usuario user : usuarios){
+            System.out.println(user + "\n");
+        }
+    }
+
+    public Usuario retornaUsuario(String nome){
+        for(Usuario user: usuarios){
+            if(user.getUsuario().equals(nome)){
+                return user;
+            }
+        }
+        return null;
+    }
+    
+    public void seguirUsuario(String nome, String nome2){
+        for(Usuario user : usuarios){
+            if(user.getUsuario().equals(nome)){
+                user.seguir(retornaUsuario(nome2));
+            }
+        }
+    }
+    public void userTweetar(String nome, String mensagem){
+        retornaUsuario(nome).tweetar(new Tweet(nome, mensagem));
+    }
+    public void verTimeline(String nome){
+        retornaUsuario(nome).lerTimeline();
+    }
+    public void darLike(String nome, int idTweet){
+        retornaUsuario(nome).darLike(idTweet);
+    }
 }
-}
+    
+    
+    

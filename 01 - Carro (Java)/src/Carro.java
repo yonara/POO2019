@@ -81,6 +81,7 @@ public class Carro{ //Classe
 			String linha = input.nextLine();
 			String[] comando = linha.split(" ");
 			String op = comando[0];
+			
 			if(op.equals("embarcar")){
 				car.embarcar();
 			}else if(op.equals("mostrar")) {
