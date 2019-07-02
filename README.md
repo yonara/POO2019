@@ -9,23 +9,32 @@ Estou começando a pegar a linguagem, mesmo assim ainda demorei muito para fazer
 
 
 # Calculadora(JAVA): 
-
-
-
-# Cinema: 
-
+Fiz a tividade sozinha  com  o conhecimento que adquiri ao fazer o carro, consegui firmar os conceitos de classe, metodos, construtor e atributos de forma satisfatória. 
+ 
 
 # Topik: 
+Fiz a atividade com auxílio de video aulas, e com ajuda de alguns colegas, comecei a compreender melhor o toString, mas ainda encontro dificuldades na linguagem e na estrutura.
 
 
 
 # PET:
-
+Fiz a atividade parte em sala de aula e a outra parte fiz em casa com ajuda de amigos, tive bastante dificuldade na lógica, compreendi melhor o Arraylist
 
 # Agiota: 
+Comecei a fazer atividade mas não finalizei, criei as clases, atributos e metodos. 
+
 
 
 # Agencia(Revendo conceitos - Avaliação): 
+Demorei c 2 dias para fazer essa atividade, mas consegui rever todos o conteúdo estudado. 
 
 
 # Twiitwer: 
+Demorei para entender o projeto, achei a logica um pouco complicada, usei um diagrama para
+compreender melhor,  que me ajudou bastante. Ainda sinto dificuldades, mas consigo resolver os problemas 
+encontrados pesquisando.
+
+# Conta Bancaria:
+Fiz a atividade com auxílio de videos e pequisando, tive um pouco de dificuldade para fazer
+a parte do extorno
+
